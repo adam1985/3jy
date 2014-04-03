@@ -1,0 +1,318 @@
+
+@import "tools"
+
+/*
+  共用类
+*/
+
+.fl
+  f l
+
+.fr
+  f r
+
+.cl
+  cl()
+
+.tl
+  ta l
+
+.tr
+  ta r
+
+.tc
+  ta c
+
+.block
+  d b
+
+.show
+  d b
+
+.none
+  d n
+
+.hide
+  d n
+
+.inline-block
+  d ib
+
+.rela
+  po r
+
+.abso
+  po a
+
+.tindex
+  ti -9999em
+
+.font-ms
+  ff "微软雅黑"
+
+.overflow
+  o h
+
+.f12
+  fs 12
+
+.f14
+  fs 14
+
+.f16
+  fs 16
+
+.auto
+  m 0 a
+
+.nb
+  bd n
+
+.cur
+  cu p
+
+.bold
+  fw b
+
+.under
+  td u
+
+.middle
+  va m
+
+a
+  c #5a5a5a; td n; ol n
+  &:hover
+    td n; c #D20001
+
+.hover
+  a:hover
+    c #D20001
+
+img
+  @extend .middle
+
+.sprites
+  g "sprites.png"
+
+.nv-sprites
+  g "nv.png"
+
+/*
+  页面布局
+*/
+html
+  g #efefef;
+
+body
+  fs 12;
+  font-family : Arial,"宋体"
+
+.page-width
+  w 960; m 0 a;
+
+.gray
+.gray a
+  c #999
+
+.top-navigator
+  h 36; lh 36; gc #4f4f4f
+
+.in-top-navigator
+  w 420; m 0 a; c #fff
+  a
+    c #fff
+    &:hover
+      td u
+
+.add-favorites
+  m 0 30 0 40; d i
+  i
+    w 14; h 14; gp -324 0; po r; t 3
+
+.quick-hint a
+  d b; h 100%; w 50; ta c; g #458ccb
+
+.banner
+  h 110; g #edf9fd;
+
+.in-banner
+  @extend .page-width
+  h 100%; po r
+
+.joke-logo a
+  d b; w 230; h 110
+
+.publish-joke
+  po a; l 430; t 20
+
+.user-login
+  po a; t 0; r 0; w 100; h 24; g #5ab1ff; bb #458ccb;
+  a
+    d b; fz 13; w 50%; h 100%; c #fff; fw b; ta c; lh 24
+    &:hover
+      g #07a1e9
+
+.menu-box
+  h 36; lh 36; g #458ccb; bt #9bd0ff;
+
+.in-menu-box
+  @extend .page-width
+
+.menu-list li
+  f l
+  a
+    @extend .font-ms
+    d b; p 0 18; h 36; c #fff; fs 16;
+    &:hover
+      g #2670b2; td n;
+    &.on
+      g #2b69a0; td n;
+
+.upload-joke a
+  d b; w 84; h 30; ti -9999; gp -176 -20; mt 3
+
+.in-sub-banner
+  @extend .page-width
+  h 80; g #fff; mt 10;
+
+
+/* 文章主体部分 */
+
+.container
+  @extend .page-width
+  pt 20
+
+.article
+  w 640
+
+.art-list
+  p 20; mb 20; g #fff;
+
+.art-title h2
+  @extend .bold
+  fs 18; mb 10;
+  a
+    c #333; ol n; td n;
+    &:hover
+      c #458ccb; td n;
+
+.art-writer
+  pr 8;
+  i
+    w 16; h 16; m -1 4 0 0; gp 0 -120;
+
+.art-content
+  fs 14; lh 26;
+
+.listpic
+  mt 10; mw 800; o h;
+
+.art-footer
+  mt 20;
+
+.digg a
+  d b; bd #dedede; radius 4; mr 12; p 0 8; h 24; lh 24;
+  &:hover
+    bd #bababa; td n; shadow 0 0 10px #ddd;
+  p
+    pl 26; fs 14; font-family: Arial, Helvetica, sans-serif; c #999;
+
+.digg-up p
+  gp 0 2
+  &:hover
+    gp 0 1
+
+.digg-down p
+  gp 0 -34
+  &:hover
+    gp 0 -33
+
+/* 分页区 */
+
+.page-list
+  h 26; lh 26; ta c; w 100%; p 6 0; mb 15;
+  ul
+    ml 118;
+
+.page-list li
+  f l; mr 2;
+  a
+  span
+    d b; ml 2; p 0 12; h 26; bd #ccc; radius : 4; bc #f7f7f7; c #888;
+
+.page-list li.on a
+.page-list a:hover
+  bd #e47d47;
+  gc #fc8b4f;
+  color #fff
+
+
+.aside
+  w 300
+
+.footer
+  mt 20
+
+.footer-bar
+  w 100%; h 45; lh 45; g #458ccb
+
+.flink-box
+  @extend .page-width
+  m 5 a 15
+  h2
+    @extend .bold; c #666; lh 36
+
+.flink-lisr a
+  pr 20; c #828282;
+
+.copyright
+  @extend .page-width
+  ta c; c #888; g #e9e9ec; lh 20; p 10 0
+
+
+/* 文章详情页 */
+
+.mini-logo
+  mr 20;
+.inside-page-menu
+  h 55; lh 55;
+
+.inside-menu-list li a
+  h 100%; p 0 9;
+
+.user-joke-post a
+  f l; d l; c #fff; fs 13; @extend .bold; m 0 8; ta c;
+  &:hover
+    td u;
+
+.user-joke-post .joke-post
+  w 60; f r; g #78cd58; h 30; lh 30; mt 13; fw n; radius 4;
+
+
+.page-list-control
+  w 100%; pt 20; o h; ta c;
+  a
+    d i; ti -9999
+
+.prev-joke
+  h 43; w 90; m 13 35 0 150; gp -152 -604;
+
+.next-joke
+  h 69; w 162; gp -255 -585
+
+.hot-joke-list
+  w 599; o h; g #fff; p 10 17 5 24
+  ul
+    w 610;
+  li
+    f l; h 150; w 185; p 10 18 10 0; o h;
+
+.thumbnails
+  height 160; m 0; w 100%; o h;
+  p
+    w 100%; h 20; lh 20; o h; @extend .cur; ta c; @extend .f14; @extend .font-ms
+
+
+
+

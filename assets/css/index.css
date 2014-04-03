@@ -1,0 +1,101 @@
+.fl{float:left;}
+.fr{float:right;}
+.cl{zoom:1;}
+.cl:after{content:"";display:block;height:0;clear:both;visibility:hidden}
+.tl{text-align:left;}
+.tr{text-align:right;}
+.tc{text-align:center;}
+.block{display:block;}
+.show{display:block;}
+.none{display:none;}
+.hide{display:none;}
+.inline-block{display:inline-block;}
+.rela{position:relative;}
+.abso{position:absolute;}
+.tindex{text-indent:-9999em}
+.font-ms,.menu-list li a,.thumbnails p{font-family:"微软雅黑"}
+.overflow{overflow:hidden;}
+.f12{font-size:12px}
+.f14,.thumbnails p{font-size:14px}
+.f16{font-size:16px}
+.auto{margin:0 auto}
+.nb{border:none}
+.cur,.thumbnails p{cursor:pointer;}
+.bold,.art-title h2,.flink-box h2,.user-joke-post a{font-weight:bold;}
+.under{text-decoration:underline;}
+.middle,img{vertical-align:middle;}
+a{color:#5a5a5a;text-decoration:none;blr:expression(this.onFocus=this.close());outline:none;}
+a:hover{text-decoration:none;color:#d20001}
+.hover a:hover{color:#d20001}
+.sprites{background:url("../images/sprites.png") no-repeat}
+.nv-sprites{background:url("../images/nv.png") no-repeat}
+html{background:#efefef}
+body{font-size:12px;font-family:Arial,"宋体"}
+.page-width,.in-banner,.in-menu-box,.in-sub-banner,.container,.flink-box,.copyright{width:960px;margin:0 auto}
+.gray,.gray a{color:#999}
+.top-navigator{height:36px;line-height:36px;background-color:#4f4f4f}
+.in-top-navigator{width:420px;margin:0 auto;color:#fff;}
+.in-top-navigator a{color:#fff;}
+.in-top-navigator a:hover{text-decoration:underline;}
+.add-favorites{margin:0 30px 0 40px;display:inline;}
+.add-favorites i{width:14px;height:14px;background-position:-324px 0;position:relative;top:3px}
+.quick-hint a{display:block;height:100%;width:50px;text-align:center;background:#458ccb}
+.banner{height:110px;background:#edf9fd}
+.in-banner{height:100%;position:relative;}
+.joke-logo a{display:block;width:230px;height:110px}
+.publish-joke{position:absolute;left:430px;top:20px}
+.user-login{position:absolute;top:0;right:0;width:100px;height:24px;background:#5ab1ff;border-bottom:1px solid #458ccb;}
+.user-login a{display:block;fz:13;width:50%;height:100%;color:#fff;font-weight:bold;text-align:center;line-height:24px;}
+.user-login a:hover{background:#07a1e9}
+.menu-box{height:36px;line-height:36px;background:#458ccb;border-top:1px solid #9bd0ff}
+.menu-list li{float:left;}
+.menu-list li a{display:block;padding:0 18px;height:36px;color:#fff;font-size:16px;}
+.menu-list li a:hover{background:#2670b2;text-decoration:none;}
+.menu-list li a.on{background:#2b69a0;text-decoration:none;}
+.upload-joke a{display:block;width:84px;height:30px;text-indent:-9999px;background-position:-176px -20px;margin-top:3px}
+.in-sub-banner{height:80px;background:#fff;margin-top:10px}
+.container{padding-top:20px}
+.article{width:640px}
+.art-list{padding:20px;margin-bottom:20px;background:#fff}
+.art-title h2{font-size:18px;margin-bottom:10px;}
+.art-title h2 a{color:#333;blr:expression(this.onFocus=this.close());outline:none;text-decoration:none;}
+.art-title h2 a:hover{color:#458ccb;text-decoration:none;}
+.art-writer{padding-right:8px;}
+.art-writer i{width:16px;height:16px;margin:-1px 4px 0 0;background-position:0 -120px}
+.art-content{font-size:14px;line-height:26px}
+.listpic{margin-top:10px;mw:800;overflow:hidden;}
+.art-footer{margin-top:20px}
+.digg a{display:block;border:1px solid #dedede;border-radius:4px;margin-right:12px;padding:0 8px;height:24px;line-height:24px;}
+.digg a:hover{border:1px solid #bababa;text-decoration:none;box-shadow:0 0 10px #ddd}
+.digg a p{padding-left:26px;font-size:14px;font-family:Arial,Helvetica,sans-serif;color:#999}
+.digg-up p{background-position:0 2px;}
+.digg-up p:hover{background-position:0 1px}
+.digg-down p{background-position:0 -34px;}
+.digg-down p:hover{background-position:0 -33px}
+.page-list{height:26px;line-height:26px;text-align:center;width:100%;padding:6px 0;margin-bottom:15px;}
+.page-list ul{margin-left:118px}
+.page-list li{float:left;margin-right:2px;}
+.page-list li a,.page-list li span{display:block;margin-left:2px;padding:0 12px;height:26px;border:1px solid #ccc;border-radius:4px;bc:#f7f7f7;color:#888}
+.page-list li.on a,.page-list a:hover{border:1px solid #e47d47;background-color:#fc8b4f;color:#fff}
+.aside{width:300px}
+.footer{margin-top:20px}
+.footer-bar{width:100%;height:45px;line-height:45px;background:#458ccb}
+.flink-box{margin:5px auto 15px;}
+.flink-box h2{color:#666;line-height:36px}
+.flink-lisr a{padding-right:20px;color:#828282}
+.copyright{text-align:center;color:#888;background:#e9e9ec;line-height:20px;padding:10px 0}
+.mini-logo{margin-right:20px}
+.inside-page-menu{height:55px;line-height:55px}
+.inside-menu-list li a{height:100%;padding:0 9px}
+.user-joke-post a{float:left;color:#fff;font-size:13px;margin:0 8px;text-align:center;}
+.user-joke-post a:hover{text-decoration:underline;}
+.user-joke-post .joke-post{width:60px;float:right;background:#78cd58;height:30px;line-height:30px;margin-top:13px;font-weight:normal;border-radius:4px}
+.page-list-control{width:100%;padding-top:20px;overflow:hidden;text-align:center;}
+.page-list-control a{display:inline;text-indent:-9999px}
+.prev-joke{height:43px;width:90px;margin:13px 35px 0 150px;background-position:-152px -604px}
+.next-joke{height:69px;width:162px;background-position:-255px -585px}
+.hot-joke-list{width:599px;overflow:hidden;background:#fff;padding:10px 17px 5px 24px;}
+.hot-joke-list ul{width:610px}
+.hot-joke-list li{float:left;height:150px;width:185px;padding:10px 18px 10px 0;overflow:hidden;}
+.thumbnails{height:160;margin:0;width:100%;overflow:hidden;}
+.thumbnails p{width:100%;height:20px;line-height:20px;overflow:hidden;text-align:center;}

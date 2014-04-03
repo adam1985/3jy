@@ -1,0 +1,441 @@
+/**
+  此样式表是由stylus编写生成
+  version v 0.0.1
+*/
+
+/*
+  保存内置方法
+*/
+
+$p = p
+$s = s
+
+images-url = "../images/" // 图片路径
+
+
+getPx( prop, value, ies = null ) //　添加px单位
+  attr = a auto
+  if ies != null
+    prop = ies + prop
+  if match( '%|em', "" + value )
+    {prop} value
+  else if type( value ) == 'unit'
+    {prop} unit( value, 'px' )
+  else if value in attr
+    {prop} attr[1]
+
+getPxs( prop, vals ) //　批量px单位
+  attrs = a auto, i inherit
+  ies = null
+  lists = ()
+  for num in vals
+    for val in attrs
+      if num in val
+        num = val[1]
+    if type( num ) == 'unit' && !match( '%|em', "" + num )
+      push( lists, unit( num, 'px' ) ) 
+    else
+      push( lists, num )
+
+  if match( "_|\*", "" + last(vals) )
+    ies = last(vals)
+    pop( lists )
+
+  {ies}{prop} lists
+
+short( prop, val, attrs, ies = null ) // 属性缩写
+  for attr in attrs
+    if val in attr
+      if ies != null
+        {ies + prop} attr[1]
+      else
+        {prop} attr[1]
+
+vendor( prop, args ) // css3 前缀封装
+  -webkit-{prop} args
+  -moz-{prop} args
+  -o-{prop} args
+  -ms-{prop} args
+  {prop} args
+
+
+/*
+  css3 封装
+*/
+
+_matrix()
+  vendor( 'transform', matrix( arguments ) )
+
+_translate()
+  vendor( 'transform', translate( arguments ) )
+
+_translateX()
+  vendor( 'transform', translateX( arguments ) )
+
+_translateY()
+  vendor( 'transform', translateY( arguments ) )
+
+_rotate()
+  vendor( 'transform', rotate( arguments ) )
+
+_scale()
+  vendor( 'transform', scale( arguments ) )
+
+_scaleX()
+  vendor( 'transform', scaleX( arguments ) )
+
+_scaleY()
+  vendor( 'transform', scaleY( arguments ) )
+
+_skew()
+  vendor( 'transform', skew( arguments ) )
+
+_skewX()
+  vendor( 'transform', skewX( arguments ) )
+
+_skewY()
+  vendor( 'transform', skewY( arguments ) )
+
+_transition()
+  vendor( 'transition', arguments )
+
+radius( value, ies = null )
+  getPx border-radius value ies
+
+top-left( value, ies = null )
+  getPx border-top-left-radius value ies
+
+top-right( value, ies = null )
+  getPx border-top-right-radius value ies
+
+bottom-left( value, ies = null )
+  getPx border-bottom-left-radius value ies
+
+bottom-right( value, ies = null )
+  getPx border-bottom-right-radius value ies
+
+shadow()
+  box-shadow arguments
+
+tshadow()
+  text-shadow arguments
+
+stroke()
+  text-stroke arguments
+
+fill( value )
+  text-fill-color value
+
+/*
+  常用方法 封装
+*/
+
+
+d( value, ies = null ) // display
+  attrs = b block, i inline, n none, ib inline-block, it inherit // display属性值
+  short display value attrs ies
+
+o( value, ies = null ) // overflow
+  attrs = v visible, h hidden, s scroll, a auto, i inline-block // overflow属性值
+  short overflow value attrs ies
+
+ox( value, ies = null ) // overflow-x
+  attrs = v visible, h hidden, s scroll, a auto, i inline-block // overflow-x属性值
+  short overflow-x value attrs ies
+
+oy( value, ies = null ) // overflow-y
+  attrs = v visible, h hidden, s scroll, a auto, i inline-block // overflow-y属性值
+  short overflow-y value attrs ies
+
+v( value, ies = null ) // visibility
+  attrs = v visible, h hidden, c collapse, i inline-block // visibility属性值
+  short visibility value attrs ies 
+
+po( value, ies = null ) // position
+  attrs = r relative, a absolute, f fixed, s static // position属性值
+  short position value attrs ies
+
+t( value, ies = null ) // top
+  getPx top value ies
+
+r( value, ies = null ) // right
+  getPx right value ies
+
+b( value, ies = null ) // bottom
+  getPx bottom value ies
+
+l( value, ies = null ) // left
+  getPx left value ies
+
+
+f(  value, ies = null  ) // float
+  attrs = l left, r right, n none, i inherit // float属性值
+  short float value attrs ies
+
+cl() // 清除浮动
+  zoom 1
+  &:after
+    content ""
+    d block
+    h 0
+    clear both
+    visibility hidden
+
+w( value, ies = null ) // width 
+  getPx width value ies
+
+max-w( value, ies = null ) // max-width
+  getPx max-width value ies
+
+min-w( value, ies = null ) // min-width
+  getPx min-width value ies
+
+h( value, ies = null ) // height
+  getPx height value ies
+
+max-h( value, ies = null ) // max-height
+  getPx max-height value ies
+
+min-h( value, ies = null ) // min-height
+  getPx min-height value  ies
+
+m() // margin
+  getPxs margin arguments 
+
+mt( value, ies = null ) // margin-top
+  getPx margin-top value ies
+
+mr( value, ies = null ) // margin-right
+  getPx margin-right value ies
+
+mb( value, ies = null ) // margin-bottom
+  getPx margin-bottom value ies
+
+ml( value, ies = null ) // margin-left 
+  getPx margin-left value ies
+
+p() // padding
+  getPxs padding arguments
+
+pt( value, ies = null ) // padding-top
+  getPx padding-top value ies
+
+pr( value, ies = null ) // padding-right
+  getPx padding-right value ies
+
+pb( value, ies = null ) // padding-bottom
+  getPx padding-bottom value ies
+
+pl( value, ies = null ) // padding-left
+  getPx padding-left value ies
+
+fs( value, ies = null ) // font-size
+  getPx font-size value ies
+
+ff( value, ies = null ) // font-family
+  if ies == null
+    font-family value
+  else
+    {ies}font-family value
+
+ft(  value, ies = null ) // font-style
+  attrs = n normal, i italic, o oblique // font-style 属性
+  short font-style value attrs ies
+
+fw(  value, ies = null ) //  font-weight
+  attrs = b bold, n normal // fw属性值
+  short font-weight value attrs ies
+
+ws(  value, ies = null ) // white-space
+  attrs = n normal, nw nowrap, p pre, pw pre-wrap, pl pre-line // white-space属性值
+  short white-space value attrs ies
+
+wb(  value, ies = null ) // word-break 
+  attrs = n normal, k keep-all, b break-all // word-break 属性值
+  short word-break value attrs ies
+
+ww(  value, ies = null ) // word-wrap
+  attrs = n normal, k keep-all, b break-all // word-wrap 属性值
+  short word-wrap value attrs ies
+
+c( value, ies = null ) // color
+  {ies}color value
+
+ta(  value, ies = null ) // text-align
+  attrs = l left, c center, r right, j justify, i inherit // text-align属性值
+  short text-align value attrs ies 
+
+td(  value, ies = null ) // text-decoration
+  attrs = n none, u underline, l line-through, o overline, i inherit // text-decoration属性值
+  short text-decoration value attrs ies 
+
+va(  value, ies = null ) // vertical-align
+  attrs = bl baseline, s sub, sp super, t top, tt text-top, m middle, b bottom, tb text-bottom,i inherit // vertical-align属性值
+  short vertical-align value attrs ies 
+
+z( i, ies = null ) // z-index
+  {ies}z-index i
+
+ti( value, ies = null ) // text-indent
+  attr = i inherit
+  if match( "em|%", "" + value )
+    {ies}text-indent value
+  else if type( value ) == 'unit'
+    getPx text-indent value ies
+  else if value in attr
+    {ies}text-indent attr[1]
+
+lh( value, ies = null ) // line-height 
+  attrs = n normal, i inherit // line-height 属性值
+  short line-height value attrs ies
+  if match( "em|%", "" + value )
+    {ies}line-height value
+  else if type( value ) == 'unit'
+    getPx line-height value ies
+
+$b( prop, value, bw, $type, ies ) // 边框封装函数
+  attrs = n none, d dashed, s solid, db double, g groove, r ridge, i inset, o outset
+  if match( "_|\*", "" + bw )
+    ies = bw
+    bw = 1
+  if match( "_|\*", "" + $type )
+    ies = $type
+    $type = solid
+  if type( bw ) != 'unit'
+    $type = bw
+    bw = 1
+  for val in attrs
+    if $type in val
+      $type = val[1]
+  if type( value ) == 'rgba' 
+    {ies}{prop} unit( bw, 'px' ) $type value 
+  else if value in attrs[0]
+    {ies}{prop} attrs[0][1]
+
+bd( value = #ccc, bw = 1, type = solid, ies = null ) // border
+  $b border value bw type ies
+
+bt( value = #ccc, bw = 1, type = solid, ies = null ) // border-top
+  $b border-top value bw type ies
+
+br( value = #ccc, bw = 1, type = solid, ies = null ) // border-right
+  $b border-right value bw type ies
+
+bb( value = #ccc, bw = 1, type = solid, ies = null ) // border-bottom
+  $b border-bottom value bw type ies
+
+bl( value = #ccc, bw = 1, type = solid, ies = null ) // border-left
+  $b border-left value bw type ies
+
+bw() // border-width
+  getPxs border-width arguments
+
+g( src, re = n, $x = null, $y = null, bgc = null, ies = null ) // background
+  attrs = n no-repeat, r repeat, x repeat-x, y repeat-y  // position-repeat 属性值
+  xys = l left, c center, r right, t top, b bottom
+  for val in attrs
+    if re is val[0] || re is val[1]
+      re = val[1]
+
+
+    if match( "_|\*", "" + re )
+      ies = re
+      re = no-repeat
+    if match( "_|\*", "" + $x )
+      ies = $x
+      $x = null
+    if match( "_|\*", "" + $y ) 
+      ies = $y
+      $y = null
+    if match( "_|\*", "" + bgc ) 
+      ies = bgc
+      bgc = null
+
+  if type( src ) == 'rgba' // 第一个参数为rgba类型
+    if !match( "repeat", "" + re )
+      ies = re
+    {ies}background src
+  else
+    if ( type( re ) == 'unit' )  // 第二个参数为unit类型
+      bgc = $y
+      $y = $x
+      $x = re
+      re = values(attrs)[0]
+    else 
+      if type( re ) == 'rgba' // 第二个参数类型为rgba
+        bgc = re
+        re = values(attrs)[0]
+      else 
+        if !match( "repeat", "" + re )  //第二个参数不包含repeat字符串
+          bgc = $y
+          $y = $x
+          $x = re
+          re = values(attrs)[0]
+
+    if $x is a 'rgba' // 第三个参数是rgba类型
+      bgc = $x 
+      $x = null
+    
+    for target in xys 
+      if $x is target[0] || $x is target[1]  
+        $x = target[1]
+      if $y is target[0] || $y is target[1]  
+        $y = target[1]
+
+    type( $x ) == 'unit' ? $x = unit( $x, 'px' ) : $x = $x
+    type( $y ) == 'unit' ? $y = unit( $y, 'px' ) : $y = $y
+
+    {ies}background bgc url( images-url + src ) re $x $y
+
+gi( src, ies = null ) // background-image
+  {ies}background-image url( images-url + src )
+
+gc( color, ies = null ) // background-color
+  {ies}background-color color
+
+gp( x, y, ies = null ) // background-position
+  type( x ) == 'unit' ? x = unit( x, 'px' ) : x = x
+  type( y ) == 'unit' ? y = unit( y, 'px' ) : y = y
+  {ies}background-position x y
+
+gr( value, ies = null ) // background-repeat
+  attrs = n no-repeat, r repeat, x repeat-x, y repeat-y  // position-repeat 属性值
+  short background-repeat value attrs ies
+
+ga( value = s, ies = null ) // background-attachment
+  attrs = f fixed, s scroll, l local // position-repeat 属性值
+  short background-attachment value attrs ies
+
+go( value, ies = null ) // background-origin
+  attrs = p padding-box, b border-box, c content-box // position-origin 属性值
+  short background-origin value attrs ies
+
+cu( value, ies = null ) // cursor
+  attrs = d default, a auto, p pointer, m move, t text // cursor属性值
+  short cursor value attrs ies
+   
+to( value, ies = null ) // text-overflow
+  attrs = c clip, e ellipsis // text-overflow属性值
+  short text-overflow value attrs ies
+
+opt( value ) //　元素透明度
+   opacity value             
+   filter unquote( "alpha(opacity=" + value * 100 + ")" )
+
+ol( value ) // 去除链接虚线框
+  attrs = n none
+  blr unquote( "expression(this.onFocus=this.close())" )
+  if value in attrs
+    outline attrs[1]
+
+elli( $w ) //　CSS 单行溢出文本显示省略号
+  w $w
+  to e
+  ws nw
+  o h
+
+ie6( selector, args... )
+  selector args
+
+ie( selector, args... )
+  selector args

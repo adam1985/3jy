@@ -1,0 +1,11 @@
+{
+  "name": "01418",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-contrib-stylus": "~0.4.0",
+    "grunt-contrib-watch": "~0.1.4",
+    "grunt-closure-tools": "~0.8.3"
+  }
+}
